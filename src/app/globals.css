@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-brand-red: #E5252A;
+  --color-brand-red-dark: #C81A1F;
+  --color-brand-red-light: #FFF1F1;
+  --color-brand-black: #0B0F19;
+  --color-brand-gray: #475569;
+  --color-brand-light: #F8FAFC;
+  --color-brand-border: #E2E8F0;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #FFFFFF;
+  color: #0F172A;
+  font-family: Arial, Helvetica, ui-sans-serif, system-ui, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: #FFFFFF;
+  color: #0F172A;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Times New Roman", Times, Georgia, serif;
+}
+
+/* Premium Shadows & Depth */
+.shadow-subtle {
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
+}
+
+.shadow-card {
+  box-shadow: 0 10px 30px -4px rgba(15, 23, 42, 0.06), 0 4px 12px -2px rgba(15, 23, 42, 0.03);
+}
+
+.shadow-card-hover {
+  box-shadow: 0 20px 40px -6px rgba(229, 37, 42, 0.12), 0 8px 16px -4px rgba(15, 23, 42, 0.06);
+}
+
+.shadow-red-button {
+  box-shadow: 0 6px 20px -3px rgba(229, 37, 42, 0.35);
+}
+
+/* Radial Glows for Light Canvas */
+.bg-radial-red {
+  background: radial-gradient(circle at 50% 0%, rgba(229, 37, 42, 0.07) 0%, transparent 70%);
+}
+
+.bg-radial-glow {
+  background: radial-gradient(circle at 80% 20%, rgba(229, 37, 42, 0.05) 0%, transparent 60%);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #E5252A;
+}
+
+/* Accessibility Focus States */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #E5252A;
+  outline-offset: 2px;
+}
+
+/* Marquee container */
+.marquee-container:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .marquee-track {
+    animation: none !important;
+    transform: none !important;
+  }
+}
