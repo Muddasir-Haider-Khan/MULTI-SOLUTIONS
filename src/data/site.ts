@@ -78,7 +78,7 @@ export const siteConfig: SiteConfig = {
     title: "MS Multi Solution | Institutional Supplies & IT Infrastructure Islamabad",
     description:
       "Reliable institutional procurement and IT hardware delivery across Islamabad. General order supplies, computers, printers, networking, CCTV, and servers.",
-    siteUrl: "https://msmultisolution.com",
+    siteUrl: "https://multisolutions.store",
   },
   owner: {
     name: "Adnan Qureshi",
