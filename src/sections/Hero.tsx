@@ -26,7 +26,7 @@ export default function Hero() {
       title: "General Supplies",
       icon: <Package className="w-5 h-5 text-brand-red" />,
       tagline: "A4 & Legal Paper, Files, Pens & Consumables",
-      highlight: "Imported 80gsm/75gsm paper reams, lever arch files, registry books, and full desk stationery.",
+      highlight: "Imported 80gsm/75gsm paper reams, lever arch files, registry books, and full desk stationery.",  
       badge: "Fast Dispatch",
     },
     {
@@ -88,7 +88,7 @@ export default function Hero() {
             <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-red-50 border border-red-200/80 shadow-sm">
               <span className="w-2.5 h-2.5 rounded-full bg-brand-red animate-pulse" />
               <span className="text-xs font-bold text-gray-800 uppercase tracking-wider">
-                Islamabad &amp; Rawalpindi Procurement Desk
+                Blue Area, Islamabad &bull; Walli Center Procurement Desk
               </span>
             </div>
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { siteConfig } from "@/data/site";
-import { ArrowRight, Check, X, Building2, Users2, ShieldAlert, ShieldCheck } from "lucide-react";
+import { ArrowRight, Check, X, Building2, Users2, ShieldAlert, ShieldCheck, Phone, MapPin } from "lucide-react";
 
 export default function About() {
   return (
@@ -106,6 +106,53 @@ export default function About() {
                   </p>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Leadership & Direct Accountability Card */}
+        <div className="bg-gradient-to-r from-gray-900 to-gray-950 text-white rounded-2xl p-8 sm:p-10 border border-gray-800 shadow-xl mb-4">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+            <div className="md:col-span-8 space-y-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-red/20 border border-brand-red/40 text-xs font-bold text-red-400 uppercase tracking-wider">
+                <span>Direct Ownership Guarantee</span>
+              </div>
+              <h3 className="font-serif font-bold text-2xl sm:text-3xl text-white">
+                Under the Leadership of {siteConfig.owner.name}
+              </h3>
+              <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+                As proprietor and head of MS Multi Solution, <strong className="text-white font-bold">{siteConfig.owner.name}</strong> ensures institutional procurement officers deal directly with decision-makers without layers of bureaucracy. Based at Walli Center, Fazl-e-Haq Road, Blue Area, Islamabad, we guarantee authentic goods, honest wholesale margins, and reliable delivery commitments.
+              </p>
+              <div className="flex flex-wrap items-center gap-4 pt-2 text-xs text-gray-400">
+                <span className="flex items-center gap-1.5">
+                  <MapPin className="w-4 h-4 text-brand-red" />
+                  Office #1, Walli Center, Blue Area, Islamabad
+                </span>
+                <span className="hidden sm:inline text-gray-600">•</span>
+                <span className="flex items-center gap-1.5">
+                  <Phone className="w-4 h-4 text-brand-red" />
+                  Direct Line: {siteConfig.owner.phoneDisplay}
+                </span>
+              </div>
+            </div>
+
+            <div className="md:col-span-4 flex flex-col gap-3 justify-center">
+              <a
+                href={`tel:${siteConfig.owner.phoneTel}`}
+                className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-lg font-bold text-xs uppercase tracking-wider bg-brand-red hover:bg-brand-red-hover text-white transition-colors shadow-red-button text-center"
+              >
+                <Phone className="w-4 h-4" />
+                <span>Call {siteConfig.owner.name}: {siteConfig.owner.phoneDisplay}</span>
+              </a>
+              <a
+                href={siteConfig.contact.whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-bold text-xs uppercase tracking-wider bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-colors text-center"
+              >
+                <span>WhatsApp Owner Direct</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </a>
             </div>
           </div>
         </div>

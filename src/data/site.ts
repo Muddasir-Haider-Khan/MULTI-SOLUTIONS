@@ -32,6 +32,15 @@ export interface SiteConfig {
     description: string;
     siteUrl: string;
   };
+  owner: {
+    name: string;
+    title: string;
+    role: string;
+    phone: string;
+    phoneDisplay: string;
+    phoneTel: string;
+    email: string;
+  };
   contact: {
     phone: string;
     phoneDisplay: string;
@@ -40,9 +49,16 @@ export interface SiteConfig {
     whatsappLink: string;
     address: string;
     city: string;
+    area: string;
+    landmark: string;
     workingHours: string;
     mapQuery: string;
+    mapUrl: string;
     mapEmbedUrl: string;
+    coordinates: {
+      lat: number;
+      lng: number;
+    };
   };
   services: ServiceItem[];
   values: ValueItem[];
@@ -64,18 +80,34 @@ export const siteConfig: SiteConfig = {
       "Reliable institutional procurement and IT hardware delivery across Islamabad. General order supplies, computers, printers, networking, CCTV, and servers.",
     siteUrl: "https://msmultisolution.com",
   },
+  owner: {
+    name: "Adnan Qureshi",
+    title: "Owner & Proprietor",
+    role: "Proprietor / Chief Executive",
+    phone: "03435665389",
+    phoneDisplay: "0343 5665389",
+    phoneTel: "+923435665389",
+    email: "info@msmultisolution.com",
+  },
   contact: {
-    phone: "TODO_PHONE", // Replace with your official phone number (e.g. "+92 51 1234567")
-    phoneDisplay: "TODO_PHONE", // Display version for UI
-    email: "TODO_EMAIL", // Replace with your official email (e.g. "info@msmultisolution.com")
-    whatsappNumber: "TODO_WHATSAPP", // Replace with WhatsApp number (e.g. "+92 300 1234567")
-    whatsappLink: "https://wa.me/TODO_WHATSAPP?text=Hello%20MS%20Multi%20Solution%2C%20I%20would%20like%20to%20request%20a%20quotation.",
-    address: "TODO_ADDRESS, Islamabad, Pakistan", // Replace with your exact office/shop address
+    phone: "+923435665389",
+    phoneDisplay: "0343 5665389",
+    email: "info@msmultisolution.com",
+    whatsappNumber: "+92 343 5665389",
+    whatsappLink: "https://wa.me/923435665389?text=Hello%20MS%20Multi%20Solution%2C%20I%20would%20like%20to%20request%20a%20quotation.",
+    address: "Office #1, Walli Center, Near Utility Head Quarter, Fazl-e-Haq Road, Blue Area, Islamabad",
     city: "Islamabad",
-    workingHours: "TODO_WORKING_HOURS", // e.g. "Monday to Saturday: 9:00 AM – 6:00 PM"
-    mapQuery: "Islamabad, Pakistan",
+    area: "Blue Area",
+    landmark: "Near Utility Head Quarter, Fazl-e-Haq Road",
+    workingHours: "Monday to Saturday: 9:00 AM – 6:00 PM",
+    mapQuery: "Office #1, Walli Center, Fazl-e-Haq Road, Blue Area, Islamabad",
+    mapUrl: "https://www.google.com/maps?q=33.7160694,73.069415&z=17&hl=en",
     mapEmbedUrl:
-      "https://maps.google.com/maps?q=Islamabad,%20Pakistan&t=&z=13&ie=UTF8&iwloc=&output=embed",
+      "https://maps.google.com/maps?q=33.7160694,73.069415&z=17&hl=en&output=embed",
+    coordinates: {
+      lat: 33.7160694,
+      lng: 73.069415,
+    },
   },
   services: [
     {

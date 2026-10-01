@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { siteConfig } from "@/data/site";
-import { Phone, Mail, MessageSquare, MapPin, Clock, Send, CheckSquare, Plus, ArrowRight } from "lucide-react";
+import { Phone, Mail, MessageSquare, MapPin, Clock, Send, CheckSquare, Plus, ArrowRight, UserCheck, ExternalLink } from "lucide-react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -108,6 +108,32 @@ ${formData.details}`);
               </h3>
 
               <div className="space-y-5">
+                {/* Proprietor & Leadership */}
+                <div className="flex items-start gap-4 pb-4 border-b border-gray-100">
+                  <div className="p-3 rounded-xl bg-red-50 text-brand-red shrink-0 mt-0.5 border border-red-100">
+                    <UserCheck className="w-5 h-5" />
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-bold uppercase tracking-wider text-gray-500 block">
+                        Proprietor &amp; Owner
+                      </span>
+                      <span className="text-[10px] font-bold uppercase tracking-wider bg-red-100 text-brand-red px-2 py-0.5 rounded">
+                        Direct Access
+                      </span>
+                    </div>
+                    <p className="text-base font-bold text-gray-900 mt-0.5">
+                      {siteConfig.owner.name}
+                    </p>
+                    <a
+                      href={`tel:${siteConfig.owner.phoneTel}`}
+                      className="text-xs font-semibold text-brand-red hover:underline block mt-0.5"
+                    >
+                      Call Direct: {siteConfig.owner.phoneDisplay}
+                    </a>
+                  </div>
+                </div>
+
                 {/* Telephone */}
                 <div className="flex items-start gap-4">
                   <div className="p-3 rounded-xl bg-red-50 text-brand-red shrink-0 mt-0.5 border border-red-100">
@@ -123,6 +149,31 @@ ${formData.details}`);
                       id="contact-phone-link"
                     >
                       {siteConfig.contact.phoneDisplay}
+                    </a>
+                  </div>
+                </div>
+
+                {/* Physical Location */}
+                <div className="flex items-start gap-4">
+                  <div className="p-3 rounded-xl bg-red-50 text-brand-red shrink-0 mt-0.5 border border-red-100">
+                    <MapPin className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <span className="text-xs font-bold uppercase tracking-wider text-gray-500 block">
+                      Office Location
+                    </span>
+                    <p className="text-sm font-semibold text-gray-800 leading-relaxed">
+                      {siteConfig.contact.address}
+                    </p>
+                    <a
+                      href={siteConfig.contact.mapUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-1.5 inline-flex items-center gap-1 text-xs font-bold text-brand-red hover:underline"
+                      id="contact-map-link"
+                    >
+                      <span>Open in Google Maps</span>
+                      <ExternalLink className="w-3.5 h-3.5" />
                     </a>
                   </div>
                 </div>
@@ -168,21 +219,6 @@ ${formData.details}`);
                   </div>
                 </div>
 
-                {/* Physical Location */}
-                <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-xl bg-red-50 text-brand-red shrink-0 mt-0.5 border border-red-100">
-                    <MapPin className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <span className="text-xs font-bold uppercase tracking-wider text-gray-500 block">
-                      Office Address
-                    </span>
-                    <p className="text-sm font-semibold text-gray-800 leading-relaxed">
-                      {siteConfig.contact.address}
-                    </p>
-                  </div>
-                </div>
-
                 {/* Working Hours */}
                 <div className="flex items-start gap-4">
                   <div className="p-3 rounded-xl bg-red-50 text-brand-red shrink-0 mt-0.5 border border-red-100">
@@ -200,18 +236,36 @@ ${formData.details}`);
               </div>
             </div>
 
-            {/* Embedded Google Map */}
-            <div className="rounded-2xl overflow-hidden border-2 border-gray-200 h-52 relative shadow-card">
+            {/* Embedded Google Map with Direct Location Link */}
+            <div className="rounded-2xl overflow-hidden border-2 border-gray-200 relative shadow-card bg-white">
               <iframe
-                title="MS Multi Solution Location Map"
+                title="MS Multi Solution Location Map - Walli Center Blue Area Islamabad"
                 src={siteConfig.contact.mapEmbedUrl}
                 width="100%"
-                height="100%"
+                height="220"
                 style={{ border: 0 }}
                 allowFullScreen={false}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />
+              <div className="p-3.5 bg-gray-50 border-t border-gray-200 flex items-center justify-between text-xs">
+                <div className="flex items-center gap-2 truncate pr-2">
+                  <MapPin className="w-4 h-4 text-brand-red shrink-0" />
+                  <span className="font-semibold text-gray-800 truncate">
+                    Office #1, Walli Center, Blue Area, Islamabad
+                  </span>
+                </div>
+                <a
+                  href={siteConfig.contact.mapUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 font-bold text-brand-red hover:underline shrink-0"
+                  id="map-external-link"
+                >
+                  <span>Google Maps</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+              </div>
             </div>
           </div>
 

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { siteConfig } from "@/data/site";
-import { ArrowUp, Phone, Mail, MapPin } from "lucide-react";
+import { ArrowUp, Phone, Mail, MapPin, UserCheck, ExternalLink } from "lucide-react";
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -76,24 +76,59 @@ export default function Footer() {
             <h4 className="font-serif font-bold text-sm text-gray-900 uppercase tracking-wider">
               Islamabad Procurement Desk
             </h4>
-            <ul className="space-y-2.5 text-xs sm:text-sm">
-              <li className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-brand-red shrink-0" />
-                <a href={`tel:${siteConfig.contact.phone}`} className="hover:text-brand-red font-semibold text-gray-800 transition-colors">
-                  {siteConfig.contact.phoneDisplay}
-                </a>
+            <ul className="space-y-3 text-xs sm:text-sm">
+              <li className="flex items-start gap-2.5">
+                <UserCheck className="w-4 h-4 text-brand-red shrink-0 mt-0.5" />
+                <div>
+                  <span className="text-[11px] uppercase tracking-wider text-gray-400 font-bold block">
+                    Proprietor / Owner
+                  </span>
+                  <span className="font-bold text-gray-900">
+                    {siteConfig.owner.name}
+                  </span>
+                </div>
               </li>
               <li className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-brand-red shrink-0" />
-                <a href={`mailto:${siteConfig.contact.email}`} className="hover:text-brand-red font-semibold text-gray-800 transition-colors">
-                  {siteConfig.contact.email}
-                </a>
+                <Phone className="w-4 h-4 text-brand-red shrink-0" />
+                <div>
+                  <span className="text-[11px] uppercase tracking-wider text-gray-400 font-bold block">
+                    Direct Contact
+                  </span>
+                  <a href={`tel:${siteConfig.contact.phone}`} className="hover:text-brand-red font-semibold text-gray-800 transition-colors">
+                    {siteConfig.contact.phoneDisplay}
+                  </a>
+                </div>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <Mail className="w-4 h-4 text-brand-red shrink-0 mt-0.5" />
+                <div>
+                  <span className="text-[11px] uppercase tracking-wider text-gray-400 font-bold block">
+                    Official Email
+                  </span>
+                  <a href={`mailto:${siteConfig.contact.email}`} className="hover:text-brand-red font-semibold text-gray-800 transition-colors">
+                    {siteConfig.contact.email}
+                  </a>
+                </div>
               </li>
               <li className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-brand-red shrink-0 mt-0.5" />
-                <span className="leading-relaxed">
-                  {siteConfig.contact.address}
-                </span>
+                <div>
+                  <span className="text-[11px] uppercase tracking-wider text-gray-400 font-bold block">
+                    Office Location
+                  </span>
+                  <span className="leading-relaxed block text-gray-700">
+                    {siteConfig.contact.address}
+                  </span>
+                  <a
+                    href={siteConfig.contact.mapUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-xs font-bold text-brand-red hover:underline mt-1"
+                  >
+                    <span>View on Google Maps</span>
+                    <ExternalLink className="w-3 h-3" />
+                  </a>
+                </div>
               </li>
             </ul>
           </div>
@@ -102,7 +137,7 @@ export default function Footer() {
         {/* Bottom Copyright Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
           <p>
-            &copy; {new Date().getFullYear()} {siteConfig.legalName}. All rights reserved.
+            &copy; {new Date().getFullYear()} {siteConfig.legalName} &bull; Proprietor: {siteConfig.owner.name}. All rights reserved.
           </p>
 
           <button

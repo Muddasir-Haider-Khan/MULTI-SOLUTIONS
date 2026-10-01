@@ -125,11 +125,16 @@ export default function Navbar() {
               </a>
             ))}
             <div className="pt-4 flex flex-col gap-3">
+              <div className="bg-gray-50 p-3 rounded-lg border border-gray-200 text-xs text-gray-600">
+                <span className="font-bold text-gray-900 block">{siteConfig.owner.name} &bull; {siteConfig.owner.title}</span>
+                <span className="block text-gray-500 mt-0.5">Office #1, Walli Center, Blue Area, Islamabad</span>
+              </div>
               <a
                 href={`tel:${siteConfig.contact.phone}`}
-                className="w-full text-center py-2.5 rounded text-sm font-semibold border border-gray-300 text-gray-800"
+                className="w-full text-center py-2.5 rounded text-sm font-semibold border border-gray-300 text-gray-800 flex items-center justify-center gap-2"
               >
-                Call: {siteConfig.contact.phoneDisplay}
+                <Phone className="w-4 h-4 text-brand-red" />
+                <span>Call: {siteConfig.contact.phoneDisplay}</span>
               </a>
               <a
                 href={siteConfig.contact.whatsappLink}

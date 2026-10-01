@@ -44,18 +44,16 @@ The application uses Next.js static export (`output: 'export'`). It requires **n
 
 ---
 
-## How to Edit Site Content & Contact Information
+## Company & Contact Information
+- **Proprietor / Owner:** Adnan Qureshi
+- **Direct Phone / Mobile:** `0343 5665389` (`+92 343 5665389`)
+- **Office Address:** Office #1, Walli Center, Near Utility Head Quarter, Fazl-e-Haq Road, Blue Area, Islamabad
+- **Google Maps Pin:** [Google Maps Location (33.7160694, 73.069415)](https://www.google.com/maps?q=33.7160694,73.069415&z=17&hl=en)
+- **Official Inquiries Email:** `info@msmultisolution.com`
 
 All company contact details, address, telephone, email, WhatsApp link, and working hours live in **one single file**:
 
 📁 [`src/data/site.ts`](file:///c:/Users/Muddasir%20Haider%20Khan/Projects/MULTI-SOLUTIONS/src/data/site.ts)
-
-Open that file and replace the placeholders:
-- `TODO_PHONE`: Your official landline or office mobile number (e.g. `+92 51 1234567`)
-- `TODO_EMAIL`: Your official inquiry email (e.g. `info@msmultisolution.com`)
-- `TODO_WHATSAPP`: Your WhatsApp mobile number (e.g. `+923001234567`)
-- `TODO_ADDRESS`: Your physical office location in Islamabad
-- `TODO_WORKING_HOURS`: Your operating hours (e.g. `Monday - Saturday: 9:00 AM - 6:00 PM`)
 
 Updating this single file automatically updates the Navbar, Hero, Contact Section, Quotation Composer, Footer, and Schema.org metadata.
 
